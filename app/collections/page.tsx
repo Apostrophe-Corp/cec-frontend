@@ -4,48 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Background from '@/public/collection-background.png';
 import Navbar from '@/components/navbar';
-import Critters from '@/public/collection/critters.png';
-import Embryo from '@/public/collection/embryo.png';
-import Guys from '@/public/collection/guys.png';
-import Kids from '@/public/collection/kids.png';
-import Scientist from '@/public/collection/scientist.png';
+import { collections } from './collections'; // Import collections data
 
-const collections = [
-  {
-    id: 'critters',
-    name: 'Critters',
-    image: Critters,
-    description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'
-  },
-  {
-    id: 'embryo',
-    name: 'EMBRYO',
-    image: Embryo,
-    description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'
-  },
-  {
-    id: 'guys',
-    name: 'GUYS',
-    image: Guys,
-    description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'
-  },
-  {
-    id: 'kids',
-    name: 'KIDS',
-    image: Kids,
-    description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'
-  },
-  {
-    id: 'scientist',
-    name: 'Scientist',
-    image: Scientist,
-    description: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'
-  }
-];
+
 
 export default function Collections() {
   return (
-    <main className="text-white relative">
+    <main className="text-white relative roboto-text">
       <Navbar />
       
       {/* Background Image and Overlay */}

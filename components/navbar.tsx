@@ -1,12 +1,12 @@
 'use client';
 
-import {  Wallet, } from 'lucide-react';
+import { Wallet } from 'lucide-react';
 import { useState } from 'react';
 import Logo from '@/public/Logo.png';
 import Image from 'next/image';
-
-
 import { ReactNode } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface ButtonProps {
   children: ReactNode;
@@ -27,60 +27,64 @@ function Button({ children, className = '', ...props }: ButtonProps) {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const menuItems = [
-    { name: 'COLLECTIONS', link: 'collections' },
-    { name: 'MISSIONS'},
-    { name: 'RAFFLES'},
-    { name: 'LOOT',},
-    { name: 'STAKING',},
-    { name: 'COP’S',},
+    { name: 'COLLECTIONS', link: '/collections' },
+    { name: 'MISSIONS', link: '/missions' },
+    { name: 'RAFFLES', link: '/raffles' },
+    { name: 'LOOT', link: '/loot' },
+    { name: 'STAKING', link: '/staking' },
+    { name: 'COP’S', link: '/cops' },
   ];
-
+  
   const otherItems = [
-    { name: 'LISTINGS' },
-    { name: 'TEAM'},
+    { name: 'LISTINGS', link: '/listings' },
+    { name: 'TEAM', link: '/team' },
   ];
 
   return (
-    <main className="">
+    <main className="roboto-text text-black">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-sm z-50 border-b border-red-600/20">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 bg-white text-black">
           <div className="flex items-center justify-between h-16">
             <div className='flex items-center gap-4'>
               <div className="flex items-center">
-                <Image 
-                src={Logo}
-                alt='Logo'
-                className='w-[73px] h-[54px]'/>
+                <Link href="/">
+                  <Image 
+                    src={Logo}
+                    alt='Logo'
+                    className='w-[73px] h-[54px]'
+                  />
+                </Link>
               </div>
               
-              <div className="hidden lg:flex items-center space-x-8 text-xs">
+              <div className="hidden lg:flex items-center space-x-8 text-sm">
                 {menuItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.link}
-                    className="flex items-center space-x-2  hover:text-[#d50a13] transition-colors"
+                    className={`flex items-center space-x-2 hover:py-[10px] hover:px-[20px] hover:bg-[#f1da00] transition-colors ${pathname.includes(item.link) ? 'py-[10px] px-[20px] bg-[#f1da00]' : ''}`}
                   >
                     <span>{item.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-8 text-xs">
+            <div className="hidden lg:flex items-center space-x-8 text-sm">
               {otherItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href="#"
-                  className="flex items-center space-x-2 hover:text-[#d50a13] transition-colors"
+                  href={item.link}
+                  className={`flex items-center space-x-2 hover:py-[10px] hover:px-[20px] hover:bg-[#f1da00] transition-colors ${pathname.includes(item.link) ? 'text-yellow-500' : ''}`}
                 >
                   <span>{item.name}</span>
-                </a>
+                </Link>
               ))}
               <Button
-                className="hover:text-[#d50a13] flex items-center space-x-2 "
+                className=" flex items-center space-x-2 text-sm"
               >
                 <Wallet className="w-5 h-5" />
                 <span>Connect Wallet</span>
@@ -116,23 +120,23 @@ export default function Navbar() {
           <div className="lg:hidden bg-black/95">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.link}
-                  className="flex items-center space-x-2 text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium"
+                  className={`flex items-center space-x-2 text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium ${pathname.includes(item.link) ? 'text-yellow-500' : ''}`}
                 >
                   <span>{item.name}</span>
-                </a>
+                </Link>
               ))}
 
               {otherItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href="#"
-                  className="flex items-center space-x-2 text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium"
+                  href={item.link}
+                  className={`flex items-center space-x-2 text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium ${pathname.includes(item.link) ? 'text-yellow-500' : ''}`}
                 >
                   <span>{item.name}</span>
-                </a>
+                </Link>
               ))}
               <Button
                 className="w-full bg-[#d50a13] text-white flex items-center justify-center space-x-2 mt-4 px-4 py-2 rounded-md"
@@ -144,7 +148,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-
     </main>
   );
 }
