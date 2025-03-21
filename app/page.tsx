@@ -33,22 +33,7 @@ function Button({ children, className = '', ...props }: ButtonProps) {
 }
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    { name: 'COLLECTIONS' },
-    { name: 'MISSIONS'},
-    { name: 'RAFFLES'},
-    { name: 'LOOT',},
-    { name: 'STAKING',},
-    { name: 'COP’S',},
-  ];
-
-  const otherItems = [
-    { name: 'LISTINGS' },
-    { name: 'TEAM'},
-  ];
-
+  
   return (
     <main className="h-screen  text-white relative">
       {/* Navigation */}
@@ -56,10 +41,10 @@ export default function Home() {
 
       {/* Main Content */}
       <div 
-        className="pt-16 min-h-screen"
+        className="pt-16 min-h-screen relative"
         style={{ backgroundImage: `url(${Background.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="bg-black/10">
+        <div className="bg-black/20 absolute inset-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             {/* Hero Section */}
             <div className="text-center mb-20 w-full flex items-center justify-center">

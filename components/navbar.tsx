@@ -29,7 +29,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'COLLECTIONS' },
+    { name: 'COLLECTIONS', link: 'collections' },
     { name: 'MISSIONS'},
     { name: 'RAFFLES'},
     { name: 'LOOT',},
@@ -60,7 +60,7 @@ export default function Navbar() {
                 {menuItems.map((item) => (
                   <a
                     key={item.name}
-                    href="#"
+                    href={item.link}
                     className="flex items-center space-x-2  hover:text-[#d50a13] transition-colors"
                   >
                     <span>{item.name}</span>
@@ -118,7 +118,7 @@ export default function Navbar() {
               {menuItems.map((item) => (
                 <a
                   key={item.name}
-                  href="#"
+                  href={item.link}
                   className="flex items-center space-x-2 text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium"
                 >
                   <span>{item.name}</span>
