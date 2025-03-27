@@ -52,24 +52,22 @@ export default function Navbar() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-red-600/20">
 
-      <div className="absolute inset-0 z-0">
-      <Image 
-        src={LeftBG} 
-        alt='' 
-        className={`hidden md:block absolute h-full left-0 top-0 pointer-events-none ${
-          isMenuOpen ? 'md:hidden' : ''
-        }`}
-      />
-      <Image 
-      src={RightBG} 
-      alt='' 
-      className='hidden lg:block absolute h-full right-0 top-0 pointer-events-none'
-      />
-  </div>
+        <div className="absolute inset-0 z-0">
+            <Image 
+              src={LeftBG} 
+              alt='' 
+              className={`hidden md:block absolute h-full left-0 top-0 pointer-events-none ${
+                isMenuOpen ? 'md:hidden' : ''
+              }`}
+            />
+            <Image 
+            src={RightBG} 
+            alt='' 
+            className='hidden lg:block absolute h-full right-0 top-0 pointer-events-none'
+            />
+        </div>
 
-        
-        
-        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative  text-black border-b-6 border-b-[#d50a13]">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative bg-white/50  text-black border-b-6 border-b-[#d50a13]">
           <div className="flex items-center justify-between h-20 lg:px-10 z-20 ">
             <div className='flex items-center gap-4'>
               <div className="flex items-center">
@@ -115,7 +113,8 @@ export default function Navbar() {
 
             <div className="xl:hidden flex items-center gap-3 md:gap-6">
               <Button
-                  className="flex items-center space-x-3 border border-[#333436]  px-5 py-[14px]  text-sm cursor-pointer "
+                  className="flex items-center space-x-3 border border-[#333436]  px-5 py-[14px]  text-sm cursor-pointer 
+                  bg-[#33343633] md:bg-white"
                 >
                   <span>Connect Wallet</span>
                   <Image src={Wallet} alt='Wallet' className='w-6 h-6'/>
