@@ -41,7 +41,151 @@ export default function Home() {
 
       {/* Main Content */}
       <div 
-        className="pt-16 min-h-screen relative"
+        className="pt-16 min-h-screen relative md:hidden"
+        style={{ backgroundImage: `url(${Background.src})`, backgroundSize: 'cover', backgroundPosition: '' }}
+      >
+        <div className="bg-black/20 absolute inset-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            {/* Hero Section */}
+            <div className="text-center mt-3 lg:mt-10 mb-20 w-full flex items-center justify-center">
+              <Image 
+              src={BodyImage} 
+              alt='' 
+              className='w-[308.09px] h-[100px] lg:w-[788px] lg:h-[160px]'/>
+            </div>
+
+            {/* Features Grid */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 place-items-center lg:px-20 lg:hidden">
+              <button>
+                <Image
+                src={ButtonCollection} 
+                alt='Button-Collection'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonRaffles} 
+                alt='Button-Raffles'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonStaking} 
+                alt='Button-Staking'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonMission} 
+                alt='Button-Mission'
+                className='w-[239px] h-[90px]'/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className="pt-16 min-h-screen relative hidden md:block lg:hidden"
+        style={{ backgroundImage: `url(${Background.src})`, backgroundSize: 'cover', backgroundPosition: '' }}
+      >
+        <div className="bg-black/20 absolute inset-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            {/* Hero Section */}
+            <div className="text-center mt-3 lg:mt-10 mb-20 w-full flex items-center justify-center">
+              <Image 
+              src={BodyImage} 
+              alt='' 
+              className='w-[308.09px] h-[100px] lg:w-[788px] lg:h-[160px]'/>
+            </div>
+
+            {/* Features Grid */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 place-items-center lg:px-20 lg:hidden">
+              <button>
+                <Image
+                src={ButtonCollection} 
+                alt='Button-Collection'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonRaffles} 
+                alt='Button-Raffles'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonStaking} 
+                alt='Button-Staking'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonMission} 
+                alt='Button-Mission'
+                className='w-[239px] h-[90px]'/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className="pt-16 min-h-screen relative hidden lg:block xl:hidden"
+        style={{ backgroundImage: `url(${Background.src})`, backgroundSize: 'cover', backgroundPosition: '' }}
+      >
+        <div className="bg-black/20 absolute inset-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            {/* Hero Section */}
+            <div className="text-center mt-3 lg:mt-10 mb-20 w-full flex items-center justify-center">
+              <Image 
+              src={BodyImage} 
+              alt='' 
+              className='w-[308.09px] h-[100px] lg:w-[788px] lg:h-[160px]'/>
+            </div>
+
+            {/* Features Grid */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 place-items-center lg:px-20 ">
+              <button>
+                <Image
+                src={ButtonCollection} 
+                alt='Button-Collection'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonRaffles} 
+                alt='Button-Raffles'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonStaking} 
+                alt='Button-Staking'
+                className='w-[239px] h-[90px]'/>
+              </button>
+
+              <button>
+                <Image
+                src={ButtonMission} 
+                alt='Button-Mission'
+                className='w-[239px] h-[90px]'/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className="pt-16 min-h-screen relative hidden xl:block"
         style={{ backgroundImage: `url(${Background.src})`, backgroundSize: 'cover', backgroundPosition: '' }}
       >
         <div className="bg-black/20 absolute inset-0">

@@ -53,16 +53,18 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-red-600/20">
 
       <div className="absolute inset-0 z-0">
-    <Image 
-      src={LeftBG} 
-      alt='' 
-      className='hidden md:block absolute h-full left-0 top-0 pointer-events-none'
-    />
-    <Image 
+      <Image 
+        src={LeftBG} 
+        alt='' 
+        className={`hidden md:block absolute h-full left-0 top-0 pointer-events-none ${
+          isMenuOpen ? 'md:hidden' : ''
+        }`}
+      />
+      <Image 
       src={RightBG} 
       alt='' 
       className='hidden lg:block absolute h-full right-0 top-0 pointer-events-none'
-    />
+      />
   </div>
 
         
@@ -172,7 +174,7 @@ export default function Navbar() {
               <Button
                 className="w-full bg-[#d50a13] text-white flex items-center justify-center space-x-2 mt-4 px-4 py-2 rounded-md"
               >
-                <Wallet className="w-5 h-5" />
+                <Image src={Wallet} alt="Wallet" className="w-5 h-5" />
                 <span>Connect Wallet</span>
               </Button>
             </div>
