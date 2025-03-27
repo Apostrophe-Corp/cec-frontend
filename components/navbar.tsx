@@ -143,8 +143,6 @@ export default function Navbar() {
             </div>
 
           </div>
-          {/* <Image src={LeftBG} alt='' className='hidden md:block absolute h-full left-0 top-0 z-0'/>
-          <Image src={RightBG} alt='' className='hidden lg:block absolute h-full right-0 top-0 z-0'/> */}
 
         </div>
 
