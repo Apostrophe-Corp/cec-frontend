@@ -63,7 +63,9 @@ export default function Navbar() {
             <Image 
             src={RightBG} 
             alt='' 
-            className='hidden lg:block absolute h-full right-0 top-0 pointer-events-none'
+            className={`hidden md:block absolute h-full right-0 top-0 pointer-events-none ${
+              isMenuOpen ? 'md:hidden' : ''
+            }`}
             />
         </div>
 
@@ -149,7 +151,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-black/95">
+          <div className="xl:hidden bg-black/95">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {menuItems.map((item) => (
                 <Link
