@@ -5,34 +5,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Background from '@/public/collection-background.png';
 import Navbar from '@/components/navbar';
-
+import { collections } from '../collections/collections'; // Import collections data
 
 
 
 export default function Collections() {
   return (
-    <main className="text-white relative roboto-text">
-      <Navbar />
-      
-      {/* Background Image and Overlay */}
+    <main className="text-white relative roboto-text flex flex-col gap-[65px] lg:gap-[30px] xl:gap-[5px]">
+    <Navbar />
+    
+    
+
+
+    <div className="relative ">
+      {/* Fixed background that covers entire viewport */}
       <div 
-        className="relative md:hidden"
+        className="fixed top-0 left-0 w-full h-full -z-10"
         style={{ 
           backgroundImage: `url(${Background.src})`, 
           backgroundSize: 'cover', 
-          backgroundPosition: 'center', 
-          backgroundAttachment: 'fixed' // Optional: Makes the background fixed for a parallax effect
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
-
-        <div className='mt-20'>
-            <h1>
-                Mission
-            </h1>
-        </div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
-    </main>
+
+      {/* Scrollable content container */}
+      <div className="relative z-10 pt-16 min-h-screen">
+        
+      </div>
+    </div>
+  </main>
   );
 }

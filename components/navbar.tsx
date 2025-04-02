@@ -48,7 +48,7 @@ export default function Navbar() {
   ];
 
   return (
-    <main className="roboto-text text-black">
+    <main className=" text-black">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-red-600/20">
 
@@ -87,7 +87,7 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.link}
-                    className={`flex items-center py-[29px] px-[20px] hover:bg-[#f1da00] transition-colors ${pathname.includes(item.link) ? 'py-[20px] px-[20px] bg-[#f1da00]' : ''}`}
+                    className={`flex text-xs items-center py-[29px] px-[20px] hover:bg-[#f1da00] transition-colors michroma-regular ${pathname.includes(item.link) ? 'py-[20px] px-[20px] bg-[#f1da00]' : ''}`}
                   >
                     <span>{item.name}</span>
                   </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.link}
-                  className={`flex items-center space-x-2 py-[29px] px-[20px] hover:bg-[#f1da00] transition-colors ${pathname.includes(item.link) ? 'text-yellow-500' : ''}`}
+                  className={`flex text-xs  items-center space-x-2 py-[29px] px-[20px] hover:bg-[#f1da00] transition-colors michroma-regular ${pathname.includes(item.link) ? 'text-yellow-500' : ''}`}
                 >
                   <span>{item.name}</span>
                 </Link>

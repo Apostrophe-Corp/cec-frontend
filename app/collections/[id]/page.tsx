@@ -4,9 +4,10 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Background from '@/public/collection-background.png';
 import Navbar from '@/components/navbar';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, } from 'lucide-react';
 import { collections } from '../collections'; // Import collections data
 import Link from 'next/link';
+import RightAgle from '@/public/Right Short.png'
 
 // Simple PRNG with a fixed seed
 function seededRandom(seed: number) {
@@ -67,32 +68,32 @@ export default function CollectionDetail() {
             <div className='flex w-full items-center px-2 gap-16 mb-1'>
                 <button
                     onClick={() => router.back()}
-                    className="flex justify-center items-center w-[28px] h-[28px] bg-[#595c5d]"
+                    className="flex justify-center items-center w-[28px] h-[28px] bg-[#595c5d] cursor-pointer"
                 >
                     <ArrowLeft className="" />
                 </button>
 
-                <h1 className="text-[38px] font-tech flex-grow md:text-center">
+                <h1 className="text-[28px] tracking-[5px] zen-dots-regular flex-grow md:text-center">
                     {collection.name}
                 </h1>
             </div>
 
           <div className="w-full flex flex-col ">
-            <div className="relative h-[184px] md:h-[300px] mb-2 ">
+            <div className="relative h-[190px] md:h-[278px] mb-2 xl:w-[846px] xl:h-[337px]">
               <Image
                 src={collection.image}
                 alt={collection.name}
                 fill
-                className=""
+                className="w-full xl:h-full"
               />
             </div>
 
-            <p className="text-gray-300 mb-12 leading-relaxed lg:px-4">
+            <p className="text-gray-300 mb-12 leading-relaxed md:px-8 space-grotesk-normal">
               {collection.fullDescription}
             </p>
 
             {/* Display 3 random collections (excluding the current one) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:px-8">
               {otherCollections.map((otherCollection) => (
                 <Link
                   href={`/collections/${otherCollection.id}`}
@@ -111,9 +112,13 @@ export default function CollectionDetail() {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
-              <button className="bg-[#F1DA00] text-black px-[30px] py-[20px] rounded-[10px] ">
+            <div className="mt-12 text-center flex items-center justify-center">
+              <button className="bg-[#F1DA00] text-black px-[30px] py-[20px] rounded-[10px] flex items-center gap-2 w-[285px] justify-center manrope-semibold">
+                <span>
                 View on Marketplace
+                </span>
+
+                <Image src={RightAgle} alt='' className='w-[18px] h-[18px]' />
               </button>
             </div>
           </div>
